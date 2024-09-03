@@ -82,4 +82,5 @@ document.getElementById('deleteUserForm').addEventListener('submit', function(ev
     .catch(error => console.error('Error:', error));
 });
 
+
 fetchUsers();
