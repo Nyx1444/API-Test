@@ -1,0 +1,122 @@
+body, h1, h2, ul, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3f51b5;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: #e8eaf6    ;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin: 5px 0;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #c5cae9;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #283593;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 150px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li:hover {
+    background-color: #f1f1f1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left-panel {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.right-panel {
+    flex: 2;
+    padding-left: 20px;
+}
+
+/* ส่วน Table ขวา */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0; 
+    margin-top: 20px;
+    border-radius: 10px; 
+    overflow: hidden;
+}
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+th {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+tr {
+    background-color: #ffffff;
+}
+.id-column {
+    width: 50px;
+    color: #1a237e;
+}
+
+.name-column {
+    color: #1a237e;
+    width: 50px;
+}
