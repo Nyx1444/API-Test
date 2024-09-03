@@ -3,7 +3,6 @@ const cors = require('cors');
 const serverless = require('serverless-http');
 const path = require('path');
 
-
 const app = express();
 
 app.use(cors());
@@ -11,8 +10,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public'))); // ใช้ไฟล์ static จาก public
 
 let users = [];
-
-
+let nextId = 1; // ตัวแปรเก็บ ID ถัดไปที่จะใช้
 
 // Route สำหรับรับข้อมูลผู้ใช้ทั้งหมด
 app.get('/api/users', (req, res) => {
@@ -22,8 +20,9 @@ app.get('/api/users', (req, res) => {
 // Route สำหรับสร้างผู้ใช้ใหม่
 app.post('/api/users', (req, res) => {
     const newUser = req.body;
-    newUser.id = users.length + 1;
+    newUser.id = nextId; // ใช้ nextId เป็น ID ของผู้ใช้ใหม่
     users.push(newUser);
+    nextId++; // เพิ่มค่า nextId เพื่อใช้ในการสร้างผู้ใช้ถัดไป
     res.status(201).json(newUser);
 });
 
@@ -59,7 +58,6 @@ if (require.main === module) {
         console.log('Server is running on http://localhost:3000');
     });
 }
-
 
 module.exports = app;
 module.exports.handler = serverless(app);
